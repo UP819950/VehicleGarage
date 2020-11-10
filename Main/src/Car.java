@@ -1,50 +1,89 @@
 public class Car {
 
     String vehicleType;
-    String carReg;
-    int carMileage;
-    boolean carInsured;
-    int carFuelRemaining;
+    String Reg;
+    int Mileage;
+    boolean Insured;
+    int FuelRemaining;
+    int SellingPrice;
+    int BoughtForPrice;
+    boolean maintenanceRequired;
 
-    public Car(String carReg, int carMileage, boolean carInsured, int carFuelRemaining) {
 
-        vehicleType = "Car";
-        this.carReg = carReg;
-        this.carMileage = carMileage;
-        this.carInsured = carInsured;
-        this.carFuelRemaining = carFuelRemaining;
+    public Car(String carReg, int carMileage, boolean carInsured, int carFuelRemaining, int carSellingPrice, int carBoughtForPrice, boolean maintenanceRequired) {
+
+        this.vehicleType = "Car";
+        this.Reg = carReg;
+        this.Mileage = carMileage;
+        this.Insured = carInsured;
+        this.FuelRemaining = carFuelRemaining;
+        this.SellingPrice = carSellingPrice;
+        this.BoughtForPrice = carBoughtForPrice;
+        this.maintenanceRequired = maintenanceRequired;
     }
 
-    public String getCarReg() {
-        return carReg;
+    public String getVehicleType() {
+        return vehicleType;
     }
 
-    public void setCarReg(String carReg) {
-        this.carReg = carReg;
+    public void setVehicleType(String vehicleType) {
+        this.vehicleType = vehicleType;
     }
 
-    public int getCarMileage() {
-        return carMileage;
+    public int getSellingPrice() {
+        return SellingPrice;
     }
 
-    public void setCarMileage(int carMileage) {
-        this.carMileage = carMileage;
+    public void setSellingPrice(int carSellingPrice) {
+        this.SellingPrice = carSellingPrice;
     }
 
-    public boolean isCarInsured() {
-        return carInsured;
+    public int getBoughtForPrice() {
+        return BoughtForPrice;
     }
 
-    public void setCarInsured(boolean carInsured) {
-        this.carInsured = carInsured;
+    public void setBoughtForPrice(int carBoughtForPrice) {
+        this.BoughtForPrice = carBoughtForPrice;
     }
 
-    public int getCarFuelRemaining() {
-        return carFuelRemaining;
+    public boolean isMaintenanceRequired() {
+        return maintenanceRequired;
     }
 
-    public void setCarFuelRemaining(int carFuelRemaining) {
-        this.carFuelRemaining = carFuelRemaining;
+    public void setMaintenanceRequired(boolean maintenanceRequired) {
+        this.maintenanceRequired = maintenanceRequired;
+    }
+
+    public String getReg() {
+        return Reg;
+    }
+
+    public void setReg(String carReg) {
+        this.Reg = carReg;
+    }
+
+    public int getMileage() {
+        return Mileage;
+    }
+
+    public void setMileage(int carMileage) {
+        this.Mileage = carMileage;
+    }
+
+    public boolean isInsured() {
+        return Insured;
+    }
+
+    public void setInsured(boolean carInsured) {
+        this.Insured = carInsured;
+    }
+
+    public int getFuelRemaining() {
+        return FuelRemaining;
+    }
+
+    public void setFuelRemaining(int carFuelRemaining) {
+        this.FuelRemaining = carFuelRemaining;
     }
 
 
@@ -54,22 +93,37 @@ public class Car {
     public String toString() {
 
         String yesNo;
+        String mYesNo;
 
-        if(carInsured == true){
+        if(Insured == true){
             yesNo = "Yes";
         } else {yesNo = "WARNING UNINSURED";};
+
+        if(maintenanceRequired == true){
+            mYesNo = "Yes";
+        } else {mYesNo = "No";};
+
+        int profitIfSold = getSellingPrice() - getBoughtForPrice();
 
 
 
 
         return
-                "Vehicle Type: " + vehicleType +
-                ", Reg: " + carReg +
-                ", Mileage: " + carMileage +
-                ", Insured? " + yesNo +
-                ", FuelRemaining: " + carFuelRemaining
+                "Vehicle Type: " + vehicleType + ", " +
+                "Reg: " + Reg + ", " +
+                "Mileage: " + Mileage + ", " +
+                "Insured? " + yesNo + ", " +
+                "FuelRemaining: " + FuelRemaining + ", " +
+                "Selling Price: £" + SellingPrice + ", " +
+                "Bought For Price: £" + BoughtForPrice + ", " +
+                "Maintenance required? " + mYesNo + ", " +
+                        "Profit If Sold: £" + profitIfSold
                 ;
     }
+
+
+
+
 
 
 
