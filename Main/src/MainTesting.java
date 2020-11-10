@@ -1,5 +1,5 @@
 
-
+import javax.swing.JOptionPane;
 import java.util.ArrayList; // import the ArrayList class
 
 public class MainTesting {
@@ -7,6 +7,9 @@ public class MainTesting {
 
 
     public static void main (String[] args ){
+
+
+
 
         ArrayList vehicles = new ArrayList();
         Car c1 = new Car("ER12 DOT", 65993, true , 25);
@@ -17,11 +20,17 @@ public class MainTesting {
         vehicles.add(c2);
         vehicles.add(v1);
 
+        ArrayList list = new ArrayList();
+
         for (int i = 0 ; i < vehicles.size() ; i ++  ){
 
-            System.out.println(  vehicles.get(i).toString()  );
+            list.add("\n" + vehicles.get(i).toString());
+
+
 
         }
+
+        JOptionPane.showMessageDialog(null,list);
 
 
 
