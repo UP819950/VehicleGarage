@@ -1,11 +1,14 @@
 public class Car {
 
+    String vehicleType;
     String carReg;
     int carMileage;
     boolean carInsured;
     int carFuelRemaining;
 
     public Car(String carReg, int carMileage, boolean carInsured, int carFuelRemaining) {
+
+        vehicleType = "Car";
         this.carReg = carReg;
         this.carMileage = carMileage;
         this.carInsured = carInsured;
@@ -60,10 +63,11 @@ public class Car {
 
 
         return
-                "carReg: " + carReg +
-                ", carMileage: " + carMileage +
-                ", carInsured: " + yesNo +
-                ", carFuelRemaining: " + carFuelRemaining
+                "Vehicle Type: " + vehicleType +
+                ", Reg: " + carReg +
+                ", Mileage: " + carMileage +
+                ", Insured? " + yesNo +
+                ", FuelRemaining: " + carFuelRemaining
                 ;
     }
 
